@@ -14,7 +14,7 @@ while True:
     if len(text) > 100:
         break
     else:
-        print("Text is too short. Please enter a text of length 100 or less.")
+        print("Text is too short. Please enter a text of length 100 or more.")
 
 # write text input into street.txt
 with open('street.txt', 'w', encoding='utf-8') as f:
