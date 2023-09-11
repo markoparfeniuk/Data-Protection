@@ -1,4 +1,4 @@
-# Ukrainian alphabet
+# English alphabet
 alphabet = 'abcdefghijklmnopqrstuvwxyz .,'
 
 def shift_cipher_encrypt(text, shift):
@@ -9,7 +9,12 @@ def shift_cipher_decrypt(text, shift):
 
 
 # Example
-text = input("Input text (100 characters): ") # text input
+while True:
+    text = input("Input text (>100 characters): ") # text input
+    if len(text) > 100:
+        break
+    else:
+        print("Text is too short. Please enter a text of length 100 or less.")
 
 # write text input into street.txt
 with open('street.txt', 'w', encoding='utf-8') as f:
