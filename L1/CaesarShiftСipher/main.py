@@ -7,12 +7,10 @@ def shift_cipher_encode(text, shift):
 def shift_cipher_decode(text, shift):
     return ''.join([alphabet[(alphabet.index(c) - shift) % len(alphabet)] if c in alphabet else c for c in text])
 
-# Test case
-text = 'привіт'
-shift = 3
 
-encoded = shift_cipher_encode(text, shift)
-print(f'Encrypted text: {encoded}')
+# Example
+text = input("Input text (100 characters, letters only): ") # text input
 
-decoded = shift_cipher_decode(encoded, shift)
-print(f'Decrypted text: {decoded}')
+# write text input into the file вулиця.txt
+with open('вулиця.txt', 'w', encoding='utf-8') as f:
+    f.write(text)
