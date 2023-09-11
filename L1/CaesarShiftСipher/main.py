@@ -26,3 +26,12 @@ encrypted_text = shift_cipher_encrypt(text, shift)
 # write encrypted text into вулиця (encrypted).txt
 with open('вулиця (encrypted).txt', 'w', encoding='utf-8') as f:
     f.write(encrypted_text)
+
+# read encrypted text from вулиця (encrypted).txt
+with open('вулиця (encrypted).txt', 'r', encoding='utf-8') as f:
+    encrypted_text = f.read()
+
+# decrypt encrypted text
+decrypted_text = shift_cipher_decrypt(encrypted_text, shift)
+
+print(decrypted_text)
