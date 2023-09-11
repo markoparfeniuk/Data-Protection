@@ -11,6 +11,18 @@ def shift_cipher_decode(text, shift):
 # Example
 text = input("Input text (100 characters, letters only): ") # text input
 
-# write text input into the file вулиця.txt
+# write text input into вулиця.txt
 with open('вулиця.txt', 'w', encoding='utf-8') as f:
     f.write(text)
+
+# read text from вулиця.txt
+with open('вулиця.txt', 'r', encoding='utf-8') as f:
+    text = f.read()
+
+# encode text
+shift = 24
+encoded_text = shift_cipher_encode(text, shift)
+
+# write encoded tect into вулиця (endoded).txt
+with open('вулиця (encoded).txt', 'w', encoding='utf-8') as f:
+    f.write(encoded_text)
