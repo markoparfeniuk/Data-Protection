@@ -21,8 +21,8 @@ with open('вулиця.txt', 'r', encoding='utf-8') as f:
 
 # encrypt text
 shift = 24
-encoded_text = shift_cipher_encrypt(text, shift)
+encrypted_text = shift_cipher_encrypt(text, shift)
 
-# write encrypted tect into вулиця (encrypted).txt
+# write encrypted text into вулиця (encrypted).txt
 with open('вулиця (encrypted).txt', 'w', encoding='utf-8') as f:
-    f.write(encoded_text)
+    f.write(encrypted_text)
