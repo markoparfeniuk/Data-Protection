@@ -25,4 +25,4 @@ encrypted_text = shift_cipher_encode(text, shift)
 
 # write encrypted tect into вулиця (encrypted).txt
 with open('вулиця (encrypted).txt', 'w', encoding='utf-8') as f:
-    f.write(encoded_text)
+    f.write(encrypted_text)
