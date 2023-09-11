@@ -1,10 +1,10 @@
 # Ukrainian alphabet
 alphabet = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюя'
 
-def shift_cipher_encryption(text, shift):
+def shift_cipher_encrypt(text, shift):
     return ''.join([alphabet[(alphabet.index(c) + shift) % len(alphabet)] if c in alphabet else c for c in text])
 
-def shift_cipher_decryption(text, shift):
+def shift_cipher_decrypt(text, shift):
     return ''.join([alphabet[(alphabet.index(c) - shift) % len(alphabet)] if c in alphabet else c for c in text])
 
 
@@ -21,8 +21,8 @@ with open('вулиця.txt', 'r', encoding='utf-8') as f:
 
 # encrypt text
 shift = 24
-encrypted_text = shift_cipher_encryption(text, shift)
+encoded_text = shift_cipher_encrypt(text, shift)
 
 # write encrypted tect into вулиця (encrypted).txt
 with open('вулиця (encrypted).txt', 'w', encoding='utf-8') as f:
-    f.write(encrypted_text)
+    f.write(encoded_text)
