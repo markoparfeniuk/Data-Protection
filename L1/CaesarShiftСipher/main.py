@@ -4,7 +4,7 @@ alphabet = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюя'
 def shift_cipher_encryption(text, shift):
     return ''.join([alphabet[(alphabet.index(c) + shift) % len(alphabet)] if c in alphabet else c for c in text])
 
-def shift_cipher_decrypted(text, shift):
+def shift_cipher_decryption(text, shift):
     return ''.join([alphabet[(alphabet.index(c) - shift) % len(alphabet)] if c in alphabet else c for c in text])
 
 
@@ -21,7 +21,7 @@ with open('вулиця.txt', 'r', encoding='utf-8') as f:
 
 # encrypt text
 shift = 24
-encrypted_text = shift_cipher_encode(text, shift)
+encrypted_text = shift_cipher_encryption(text, shift)
 
 # write encrypted tect into вулиця (encrypted).txt
 with open('вулиця (encrypted).txt', 'w', encoding='utf-8') as f:
