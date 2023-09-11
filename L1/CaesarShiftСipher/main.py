@@ -1,5 +1,5 @@
 # Ukrainian alphabet
-alphabet = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюя'
+alphabet = 'abcdefghijklmnopqrstuvwxyz .,'
 
 def shift_cipher_encrypt(text, shift):
     return ''.join([alphabet[(alphabet.index(c) + shift) % len(alphabet)] if c in alphabet else c for c in text])
@@ -9,26 +9,26 @@ def shift_cipher_decrypt(text, shift):
 
 
 # Example
-text = input("Input text (100 characters, letters only): ") # text input
+text = input("Input text (100 characters): ") # text input
 
-# write text input into вулиця.txt
-with open('вулиця.txt', 'w', encoding='utf-8') as f:
+# write text input into street.txt
+with open('street.txt', 'w', encoding='utf-8') as f:
     f.write(text)
 
-# read text from вулиця.txt
-with open('вулиця.txt', 'r', encoding='utf-8') as f:
+# read text from street.txt
+with open('street.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
 # encrypt text
 shift = 24
 encrypted_text = shift_cipher_encrypt(text, shift)
 
-# write encrypted text into вулиця (encrypted).txt
-with open('вулиця (encrypted).txt', 'w', encoding='utf-8') as f:
+# write encrypted text into street (encrypted).txt
+with open('street (encrypted).txt', 'w', encoding='utf-8') as f:
     f.write(encrypted_text)
 
-# read encrypted text from вулиця (encrypted).txt
-with open('вулиця (encrypted).txt', 'r', encoding='utf-8') as f:
+# read encrypted text from street (encrypted).txt
+with open('street (encrypted).txt', 'r', encoding='utf-8') as f:
     encrypted_text = f.read()
 
 # decrypt encrypted text
