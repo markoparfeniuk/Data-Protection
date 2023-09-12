@@ -1,17 +1,22 @@
 # Ukrainian alphabet
-alphabet = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюя'
+lowercase_alphabet = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюя'
+uppercase_alphabet = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ'
 
 def shift_cipher_encrypt(text, shift):
-    return ''.join([alphabet[(alphabet.index(c) + shift) % len(alphabet)] if c in alphabet else c for c in text])
-  
+    return ''.join([lowercase_alphabet[(lowercase_alphabet.index(c) + shift) % len(lowercase_alphabet)] if c in lowercase_alphabet
+        else uppercase_alphabet[(uppercase_alphabet.index(c) + shift) % len(uppercase_alphabet)] if c in uppercase_alphabet
+        else c for c in text])
+
 def shift_cipher_decrypt(text, shift):
-    return ''.join([alphabet[(alphabet.index(c) - shift) % len(alphabet)] if c in alphabet else c for c in text])
+    return ''.join([lowercase_alphabet[(lowercase_alphabet.index(c) - shift) % len(lowercase_alphabet)] if c in lowercase_alphabet
+        else uppercase_alphabet[(uppercase_alphabet.index(c) - shift) % len(uppercase_alphabet)] if c in uppercase_alphabet
+        else c for c in text])
 
 
 # Example
 while True:
     text = input("Input text (>100 characters), letters only: ")  # text input
-    if len(text) > 100 and all(c.lower() in alphabet for c in text):
+    if len(text) > 100 and all(c.lower() in lowercase_alphabet for c in text):
         break
     else:
         print("Invalid input. Please enter a text of length 100 or more and use letters only.")
