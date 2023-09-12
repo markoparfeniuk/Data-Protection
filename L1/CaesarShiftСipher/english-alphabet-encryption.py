@@ -30,7 +30,7 @@ with open('street.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
 # encrypt text
-shift = 1
+shift = 24
 encrypted_text = shift_cipher_encrypt(text, shift)
 
 # write encrypted text into street (encrypted).txt
