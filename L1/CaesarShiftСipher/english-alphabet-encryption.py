@@ -1,11 +1,16 @@
 # English alphabet
-alphabet = 'abcdefghijklmnopqrstuvwxyz .,'
+lowercase_alphabet = 'abcdefghijklmnopqrstuvwxyz .,'
+uppercase_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ .,'
 
 def shift_cipher_encrypt(text, shift):
-    return ''.join([alphabet[(alphabet.index(c) + shift) % len(alphabet)] if c in alphabet else c for c in text])
+    return ''.join([lowercase_alphabet[(lowercase_alphabet.index(c) + shift) % len(lowercase_alphabet)] if c in lowercase_alphabet
+        else uppercase_alphabet[(uppercase_alphabet.index(c) + shift) % len(uppercase_alphabet)] if c in uppercase_alphabet
+        else c for c in text])
 
 def shift_cipher_decrypt(text, shift):
-    return ''.join([alphabet[(alphabet.index(c) - shift) % len(alphabet)] if c in alphabet else c for c in text])
+    return ''.join([lowercase_alphabet[(lowercase_alphabet.index(c) - shift) % len(lowercase_alphabet)] if c in lowercase_alphabet
+        else uppercase_alphabet[(uppercase_alphabet.index(c) - shift) % len(uppercase_alphabet)] if c in uppercase_alphabet
+        else c for c in text])
 
 
 # Example
@@ -25,7 +30,7 @@ with open('street.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
 # encrypt text
-shift = 24
+shift = 1
 encrypted_text = shift_cipher_encrypt(text, shift)
 
 # write encrypted text into street (encrypted).txt
